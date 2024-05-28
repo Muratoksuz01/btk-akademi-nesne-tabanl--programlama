@@ -1,0 +1,28 @@
+@startuml
+title Tas Kagıt Makas
+abstract class Player{ 
+    # name:string
+    # choice:enum
+    --
+    + setName(name:string):void
+    + getnName():string
+    + {abstract} getChoice()
+    + {abstract} printChoice()
+}
+abstract class ComputerPlayer{ 
+    +{abstract} getChoice()
+
+}
+class HumanPlayer{
+    + getChoice()
+}
+class RandomComputerPlayer{
+    + getChoice()
+}
+HumanPlayer -u-|> Player :<<extends>>
+RandomComputerPlayer -u-|> ComputerPlayer :<<extends>>
+
+
+
+hide empty member
+@enduml

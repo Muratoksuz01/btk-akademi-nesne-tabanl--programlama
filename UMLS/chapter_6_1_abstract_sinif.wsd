@@ -1,0 +1,38 @@
+@startuml
+title Shape Model
+abstract class Shape{
+    #x:int
+    #y:int
+    --
+    +getX():int
+    +gety():int
+    --
+    +setX(value:int):void
+    +setY(value:int):void
+    --
+    +Shape(x:int,y:int)
+    --
+    +{abstract}draw():void
+}
+class Rectangle{
+    +Rectangle(x:int,y:int)
+    --
+    draw():void
+}
+
+class Square{
+    +Square(x:int)
+    --
+    draw():void
+}
+class Triangle{
+    +Triangle(x:int,y:int)
+    --
+    draw():void
+}
+Triangle -u-|>Shape: <<extends>>
+Rectangle -u-|>Shape: <<extends>>
+Square -u-|> Triangle: <<extends>>
+
+
+@enduml
